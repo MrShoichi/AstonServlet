@@ -1,0 +1,55 @@
+<web-app>
+    <filter>
+        <filter-name>JwtFilter</filter-name>
+        <filter-class>ru.shoichi.films.jwt.JwtFilter</filter-class>
+    </filter>
+
+    <filter-mapping>
+        <filter-name>JwtFilter</filter-name>
+        <url-pattern>/api/v1/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+    </filter-mapping>
+
+
+    <servlet>
+        <servlet-name>GenreServlet</servlet-name>
+        <servlet-class>ru.shoichi.films.servlets.GenreServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>GenreServlet</servlet-name>
+        <url-pattern>/api/v1/genres/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>ActorServlet</servlet-name>
+        <servlet-class>ru.shoichi.films.servlets.ActorServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ActorServlet</servlet-name>
+        <url-pattern>/api/v1/actors/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>MovieServlet</servlet-name>
+        <servlet-class>ru.shoichi.films.servlets.MovieServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>MovieServlet</servlet-name>
+        <url-pattern>/api/v1/movies/*</url-pattern>
+    </servlet-mapping>
+
+    <servlet>
+        <servlet-name>UserServlet</servlet-name>
+        <servlet-class>ru.shoichi.films.servlets.UserServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>UserServlet</servlet-name>
+        <url-pattern>/api/v1/users/*</url-pattern>
+    </servlet-mapping>
+
+
+</web-app>
