@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:15
+    container_name: postgres_container
+    restart: always
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=12345
+      - POSTGRES_DB=servlet
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ./src/main/resources:/docker-entrypoint-initdb.d/
+
+  tomcat:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tomcat_container
+    restart: always
+    ports:
+      - "8090:8080"
+    depends_on:
+      - db
+    environment:
+      - DB_URL=jdbc:postgresql://postgres_container:5433/servlet
+      - DB_USER=postgres
+      - DB_PASS=12345
+      - JWT_SECRET=MySuperSecretKeyForJWTGeneration12345
+      - JWT_SALT=c29tZXJhbmRvbXNhbHQ=
+    volumes:
+      - ./target/aston-films-1.0.war:/usr/local/tomcat/webapps/ROOT.war
+
+
+volumes:
+  postgres_data:
