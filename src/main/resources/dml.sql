@@ -22,7 +22,7 @@ VALUES (1, 2),
        (3, 3),
        (3, 5);
 
-INSERT INTO actors (name, birth_date, bio)
+INSERT INTO actors (name, birth_date, biography)
 VALUES ('Леонардо ДиКаприо', '1974-11-11',
         'Обладатель премии «Оскар», известный по фильмам «Титаник», «Начало» и другим.'),
        ('Кристиан Бейл', '1974-01-30', 'Известен ролями в трилогии о Тёмном рыцаре и фильме «Американский психопат».'),
@@ -42,10 +42,10 @@ VALUES ('Admin'),
        ('User');
 
 
-INSERT INTO users (username, email, password_hash, role_id)
+INSERT INTO users (username, email, password, role_id)
 VALUES ('ivan_ivanov', 'ivan@example.com', 'hashedpassword123', 1),
        ('elena_smirnova', 'elena@example.com', 'securepassword456', 2),
-       ('filmoman', 'filmofan@example.com', 'ilovecinema789', 1);
+       ('test', 'email@mail.ru', 'rJVvhzD05teatny2TWCWZm2vcZwjpHX7OLVgwMIiZF0=', 1);
 
 INSERT INTO reviews (user_id, movie_id, rating, comment)
 VALUES (1, 1, 9, 'Потрясающий сюжет и отличная визуализация.'),

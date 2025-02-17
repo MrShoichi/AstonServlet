@@ -16,7 +16,7 @@ import static ru.shoichi.films.jwt.JwtCookieUtil.getTokenFromCookies;
 @WebFilter(value = "/api/v1/*",
         initParams = {
             @WebInitParam(name = "excludedPaths", value = "/api/v1/users/login,/api/v1/users/register"),
-                @WebInitParam(name = "excludedPathPost", value = "/api/v1/reviews")
+            @WebInitParam(name = "excludedPathPost", value = "/api/v1/reviews")
         }
 )
 public class JwtFilter implements Filter {

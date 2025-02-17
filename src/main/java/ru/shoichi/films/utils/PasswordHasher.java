@@ -16,7 +16,8 @@ public class PasswordHasher {
 
     public static String hashPassword(String password) {
         try {
-            PBEKeySpec spec = new PBEKeySpec(password.toCharArray(), AppConfig.getSalt(), ITERATIONS, KEY_LENGTH);
+            PBEKeySpec spec;
+            spec = new PBEKeySpec(password.toCharArray(), AppConfig.getSalt(), ITERATIONS, KEY_LENGTH);
             SecretKeyFactory factory = SecretKeyFactory.getInstance("PBKDF2WithHmacSHA256");
             byte[] hash = factory.generateSecret(spec).getEncoded();
             return Base64.getEncoder().encodeToString(hash);

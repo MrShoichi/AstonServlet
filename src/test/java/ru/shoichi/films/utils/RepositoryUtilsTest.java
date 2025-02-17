@@ -22,7 +22,6 @@ import java.util.stream.Stream;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
 class RepositoryUtilsTest {
 
     static class TestEntity extends BaseEntity {

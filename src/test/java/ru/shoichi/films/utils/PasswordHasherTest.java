@@ -11,7 +11,6 @@ import ru.shoichi.films.config.AppConfig;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-@ExtendWith(MockitoExtension.class)
 class PasswordHasherTest {
 
     private static final byte[] MOCK_SALT = "1234567890123456".getBytes(); // 16 байтов соли

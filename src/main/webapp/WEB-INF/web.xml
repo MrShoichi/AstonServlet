@@ -2,6 +2,14 @@
     <filter>
         <filter-name>JwtFilter</filter-name>
         <filter-class>ru.shoichi.films.jwt.JwtFilter</filter-class>
+        <init-param>
+            <param-name>excludedPaths</param-name>
+            <param-value>/api/v1/users/login,/api/v1/users/register</param-value>
+        </init-param>
+        <init-param>
+            <param-name>excludedPathPost</param-name>
+            <param-value>/api/v1/reviews</param-value>
+        </init-param>
     </filter>
 
     <filter-mapping>

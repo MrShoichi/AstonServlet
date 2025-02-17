@@ -29,7 +29,6 @@ public class UserServiceImpl extends ABaseService<User, UserBaseDto> implements 
 
     @Override
     public UserBaseDto login(final String username, final String password) throws NoAuthorize {
-
         Optional<User> user = this.repository.findAll().stream().filter(x -> x.getUsername().equals(username)).findFirst();
 
         if (user.isEmpty()) {

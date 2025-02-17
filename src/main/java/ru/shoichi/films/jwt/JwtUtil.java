@@ -7,12 +7,12 @@ import java.util.Date;
 import javax.crypto.SecretKey;
 import java.nio.charset.StandardCharsets;
 
-import static ru.shoichi.films.config.AppConfig.secret;
+import static ru.shoichi.films.config.AppConfig.getSecret;
 
 public class JwtUtil {
     private static final long EXPIRATION_TIME = 1000 * 60 * 60; // 1 час
 
-    private static final SecretKey key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+    private static final SecretKey key = getSecret();
 
     public static String generateToken(String username, String role) {
         return Jwts.builder()
